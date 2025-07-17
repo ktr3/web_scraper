@@ -1,179 +1,119 @@
-# 📄 Aplicación de Web Scraping
+🕷️ Web Scraper App
 
-Una aplicación moderna de scraping web con un frontend en React y un backend en Node.js que permite a los usuarios crear y gestionar tareas de scraping con una interfaz intuitiva.
+Una aplicación moderna de scraping web con dashboard, backend robusto y base de datos, lista para producción.
 
-## ✨ Funcionalidades
+🚀 Características
 
-- **Panel moderno**: interfaz limpia y responsiva para gestionar tareas de scraping.
-- **Monitoreo en tiempo real**: actualizaciones en vivo del estado de las tareas.
-- **Configuración flexible**: soporte para selectores CSS personalizados y paginación.
-- **Exportación de datos**: exporta resultados en formatos CSV o JSON.
-- **Gestión de errores**: manejo robusto de errores y retroalimentación para el usuario.
-- **Preparado para producción**: construido con TypeScript, validación adecuada y medidas de seguridad.
+📊 Dashboard moderno: Interfaz limpia y responsive para gestionar tareas de scraping.
 
-## 🛠️ Stack Tecnológico
+🔄 Monitorización en tiempo real: Estado en vivo de las tareas.
 
-### Frontend
-- React 18 con TypeScript
-- TailwindCSS para estilos
-- React Router para navegación
-- Lucide React para íconos
+🔗 Configuración flexible: Soporte para selectores CSS y paginación.
 
-### Backend
-- Node.js con Express y TypeScript
-- Base de datos PostgreSQL
-- Puppeteer para scraping
-- Joi para validación
-- Helmet para seguridad
+📥 Exportación de datos: CSV o JSON.
 
-## 🚀 Requisitos previos
+🛡️ Manejo de errores y seguridad.
 
-- Node.js 18+ y npm
-- PostgreSQL 12+
-- Chrome/Chromium (para Puppeteer)
+🧹 Scraping robusto: Puppeteer para scraping real y controlado.
 
-## 📋 Empezando
+🌐 Tecnologías
 
-### 1. Configuración de la Base de Datos
+Frontend
 
-Crea una base de datos PostgreSQL:
+React 18 + TypeScript
 
-```sql
-CREATE DATABASE webscraper;
-2. Configuración del Backend
-bash
-Copiar
-Editar
+TailwindCSS
+
+React Router
+
+Lucide React (iconos)
+
+Backend
+
+Node.js + Express + TypeScript
+
+PostgreSQL
+
+Puppeteer
+
+Joi (validación)
+
+Helmet (seguridad)
+
+🚀 Instalación rápida
+
+📦 Requisitos
+
+Node.js 18+
+
+PostgreSQL 12+
+
+Chrome/Chromium
+
+📂 Backend
+
 cd backend
 npm install
 cp .env.example .env
-Edita .env con tu configuración de base de datos:
 
-env
-Copiar
-Editar
+Configura tu .env con las credenciales de tu base de datos:
+
 DATABASE_URL=postgresql://usuario:contraseña@localhost:5432/webscraper
 PORT=3001
 NODE_ENV=development
 CORS_ORIGIN=http://localhost:5173
-Inicia el backend:
 
-bash
-Copiar
-Editar
+Arranca el backend:
+
 npm run dev
-3. Configuración del Frontend
-bash
-Copiar
-Editar
+
+🖥️ Frontend
+
+cd frontend
 npm install
 npm run dev
-La aplicación estará disponible en http://localhost:5173
 
-🌐 Endpoints de la API
-Tareas
-POST /api/tasks - Crea una nueva tarea de scraping
+Disponible en: http://localhost:5173
 
-GET /api/tasks - Lista todas las tareas
+📋 Endpoints API
 
-GET /api/tasks/:id - Obtiene detalles y resultados de una tarea
+POST /api/tasks — Crear tarea de scraping
 
-DELETE /api/tasks/:id - Elimina una tarea
+GET /api/tasks — Listar tareas
 
-GET /api/tasks/:id/export?format=csv|json - Exporta resultados de una tarea
+GET /api/tasks/:id — Ver detalle y resultados
 
-Estado del servidor
-GET /health - Estado de salud del servidor
+DELETE /api/tasks/:id — Eliminar tarea
 
-📖 Uso
-Crear una tarea: usa el panel para crear una tarea de scraping proporcionando:
+GET /api/tasks/:id/export?format=csv|json — Exportar resultados
 
-URL objetivo
+✨ Uso
 
-Selectores CSS para título y contenido
+1️⃣ Crea una tarea desde el dashboard: define la URL objetivo, selectores CSS y configuración opcional de paginación.2️⃣ Monitoriza el progreso en tiempo real.3️⃣ Visualiza los resultados directamente en la app.4️⃣ Exporta los datos.
 
-Opcional: configuración de paginación
+🗂️ Estructura del Proyecto
 
-Monitorear progreso: observa actualizaciones en tiempo real mientras tu tarea avanza.
-
-Ver resultados: haz clic en cualquier tarea completada para ver los datos obtenidos de forma organizada.
-
-Exportar datos: descarga los resultados en formato CSV o JSON para su análisis.
-
-📝 Configuración de las Tareas
-Selectores CSS
-Proporciona selectores CSS para obtener el contenido que deseas:
-
-Selector de título: .title, h1, #headline
-
-Selector de contenido: .content, p, .description
-
-Paginación
-Activa el soporte de paginación para scraping en múltiples páginas:
-
-Marca "Activar soporte de paginación"
-
-Proporciona el selector para el botón "Siguiente": .next, [aria-label="Next"]
-
-🧪 Desarrollo
-Estructura del Proyecto
-bash
-Copiar
-Editar
 frontend/
-├── src/
-│   ├── components/          # Componentes reutilizables
-│   ├── pages/               # Páginas principales
-│   ├── hooks/               # Custom Hooks
-│   ├── types/               # Tipos TypeScript
-│   └── utils/               # Utilidades
+├── components/
+├── pages/
+├── hooks/
+├── types/
+├── utils/
+├── App.tsx
+├── main.tsx
 
 backend/
 ├── src/
-│   ├── routes/              # Rutas API
-│   ├── models/              # Modelos de base de datos
-│   ├── services/            # Lógica de negocio
-│   ├── middleware/          # Middlewares de Express
-│   └── utils/               # Utilidades
-Construcción para producción
-Frontend:
-
-bash
-Copiar
-Editar
-npm run build
-Backend:
-
-bash
-Copiar
-Editar
-cd backend
-npm run build
-npm start
-🔐 Consideraciones de Seguridad
-Validación de entradas con Joi
-
-Prevención de SQL injection con consultas parametrizadas
-
-Configuración de CORS
-
-Cabeceras de seguridad con Helmet.js
-
-Recomendaciones para limitación de tasa en producción
-
-Protección de variables de entorno
-
-🤝 Contribuciones
-Haz un fork del repositorio
-
-Crea una rama para tu feature
-
-Realiza tus cambios y haz commit
-
-Sube tu rama
-
-Abre un Pull Request
+│   ├── routes/
+│   ├── models/
+│   ├── services/
+│   ├── middleware/
+│   ├── utils/
+│   └── index.ts
 
 📜 Licencia
-Este proyecto está licenciado bajo la MIT License.
-Puedes hacer lo que quieras con él, siempre que mantengas los créditos del autor original.
+
+MIT © KTR3
+
+Creado con ❤️ por KTR3.
+
