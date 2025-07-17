@@ -1,98 +1,102 @@
-🕷️ Web Scraper App
+# 🕷️ Web Scraper App
 
-Una aplicación moderna de scraping web con dashboard, backend robusto y base de datos, lista para producción.
+> Aplicación moderna de scraping web con dashboard, backend robusto, base de datos y scraping inteligente, inspirada en ScrapeGraphAI.
 
-🚀 Características
+---
 
-📊 Dashboard moderno: Interfaz limpia y responsive para gestionar tareas de scraping.
+## 🚀 Características
 
-🔄 Monitorización en tiempo real: Estado en vivo de las tareas.
+- 📊 **Dashboard interactivo**: Administra tareas de scraping con una interfaz intuitiva.
+- 🔄 **Monitorización en tiempo real**: Ve el estado de tus tareas en vivo.
+- ✨ **Scraping inteligente**: Compatible con LLMs para extracción avanzada.
+- 🔗 **Configuración flexible**: Selectores CSS y soporte para paginación.
+- 📥 **Exportación de datos**: Resultados en JSON o CSV.
+- 🛡️ **Robusto y seguro**: Validaciones, protección y manejo de errores.
 
-🔗 Configuración flexible: Soporte para selectores CSS y paginación.
+---
 
-📥 Exportación de datos: CSV o JSON.
+## 🌐 Tecnologías
 
-🛡️ Manejo de errores y seguridad.
+### Frontend
 
-🧹 Scraping robusto: Puppeteer para scraping real y controlado.
+- React 18 + TypeScript
+- TailwindCSS
+- React Router
+- Lucide React (iconos)
 
-🌐 Tecnologías
+### Backend
 
-Frontend
+- Node.js + Express + TypeScript
+- PostgreSQL
+- Puppeteer
+- Joi (validación)
+- Helmet (seguridad)
 
-React 18 + TypeScript
+---
 
-TailwindCSS
+## ⚡ Instalación rápida
 
-React Router
+### 📦 Requisitos
 
-Lucide React (iconos)
+- Node.js 18+
+- PostgreSQL 12+
+- Chrome/Chromium
 
-Backend
+### 📂 Backend
 
-Node.js + Express + TypeScript
-
-PostgreSQL
-
-Puppeteer
-
-Joi (validación)
-
-Helmet (seguridad)
-
-🚀 Instalación rápida
-
-📦 Requisitos
-
-Node.js 18+
-
-PostgreSQL 12+
-
-Chrome/Chromium
-
-📂 Backend
-
+```bash
 cd backend
 npm install
 cp .env.example .env
+```
 
-Configura tu .env con las credenciales de tu base de datos:
+Edita `.env` con tus credenciales:
 
+```env
 DATABASE_URL=postgresql://usuario:contraseña@localhost:5432/webscraper
 PORT=3001
 NODE_ENV=development
 CORS_ORIGIN=http://localhost:5173
+```
 
 Arranca el backend:
 
+```bash
 npm run dev
+```
 
-🖥️ Frontend
+### 🖥️ Frontend
 
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-Disponible en: http://localhost:5173
+---
 
-📋 Endpoints API
+## 📋 Endpoints API
 
-POST /api/tasks — Crear tarea de scraping
+- `POST /api/tasks` — Crear tarea de scraping
+- `GET /api/tasks` — Listar tareas
+- `GET /api/tasks/:id` — Ver detalle y resultados
+- `DELETE /api/tasks/:id` — Eliminar tarea
+- `GET /api/tasks/:id/export?format=csv|json` — Exportar resultados
 
-GET /api/tasks — Listar tareas
+---
 
-GET /api/tasks/:id — Ver detalle y resultados
+## ✨ Uso
 
-DELETE /api/tasks/:id — Eliminar tarea
+1️⃣ Crea una tarea desde el dashboard: URL, selectores CSS y paginación opcional.  
+2️⃣ Monitoriza el progreso en tiempo real.  
+3️⃣ Visualiza resultados.  
+4️⃣ Exporta datos.
 
-GET /api/tasks/:id/export?format=csv|json — Exportar resultados
+---
 
-✨ Uso
+## 🗂️ Estructura del Proyecto
 
-1️⃣ Crea una tarea desde el dashboard: define la URL objetivo, selectores CSS y configuración opcional de paginación.2️⃣ Monitoriza el progreso en tiempo real.3️⃣ Visualiza los resultados directamente en la app.4️⃣ Exporta los datos.
-
-🗂️ Estructura del Proyecto
-
+```
 frontend/
 ├── components/
 ├── pages/
@@ -110,10 +114,18 @@ backend/
 │   ├── middleware/
 │   ├── utils/
 │   └── index.ts
+```
 
-📜 Licencia
+---
 
-MIT © KTR3
+---
 
-Creado con ❤️ por KTR3.
+## 📜 Licencia
 
+MIT © [KTR3](https://github.com/ktr3)
+
+---
+
+## ❤️ Agradecimientos
+
+- Creado con ❤️ por [KTR3](https://github.com/ktr3)
